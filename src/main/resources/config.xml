@@ -1,0 +1,53 @@
+<project>
+	<description />
+	<keepDependencies>false</keepDependencies>
+	<properties />
+	<!-- <scm class="hudson.plugins.git.GitSCM" plugin="git@3.8.0"> <configVersion>2</configVersion> 
+		<userRemoteConfigs> <hudson.plugins.git.UserRemoteConfig> <url>https://github.com/jenkins-docs/simple-java-maven-app.git</url> 
+		<credentialsId>26fb776d-e1d9-4a60-bcf7-a82584779c00</credentialsId> </hudson.plugins.git.UserRemoteConfig> 
+		</userRemoteConfigs> <branches> <hudson.plugins.git.BranchSpec> <name>*/master</name> 
+		</hudson.plugins.git.BranchSpec> </branches> <doGenerateSubmoduleConfigurations>false 
+		</doGenerateSubmoduleConfigurations> <submoduleCfg class="list" /> <extensions 
+		/> </scm> -->
+	<canRoam>true</canRoam>
+	<disabled>false</disabled>
+	<blockBuildWhenDownstreamBuilding>false
+	</blockBuildWhenDownstreamBuilding>
+	<blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+	<triggers />
+	<concurrentBuild>false</concurrentBuild>
+	<builders>
+		<hudson.plugins.sonar.SonarRunnerBuilder
+			plugin="sonar@2.7.1">
+			<project />
+			<properties>
+				sonar.projectName=NextFnol
+				sonar.projectKey=my:Sonar8
+				sonar.projectVersion=1.0
+				<!-- sonar.sources=D:/BackUpProjects/SchedulersTest/src/main/java -->
+				sonar.sources = C:/Shikhar/Nextfnol/fnol-next/FNOLNeXTWeb/src/
+				<!-- sonar.projectBaseDir=D:/BackUpProjects/SchedulersTest/src/main/java -->
+				sonar.projectBaseDir=C:/Shikhar/Nextfnol/fnol-next/FNOLNeXTWeb/
+				sonar.java.binaries=C:/Shikhar/Nextfnol/fnol-next/FNOLNeXTWeb/src/
+				sonar.login=admin
+				sonar.password=admin
+			</properties>
+			<javaOpts />
+			<additionalArguments />
+			<jdk>(Inherit From Job)</jdk>
+			<task />
+		</hudson.plugins.sonar.SonarRunnerBuilder>
+	</builders>
+	<!-- <publishers>
+		<hudson.tasks.ArtifactArchiver>
+			<artifacts>artifacts/**/*</artifacts>
+			<allowEmptyArchive>false</allowEmptyArchive>
+			<onlyIfSuccessful>false</onlyIfSuccessful>
+			<fingerprint>false</fingerprint>
+			<defaultExcludes>true</defaultExcludes>
+			<caseSensitive>true</caseSensitive>
+		</hudson.tasks.ArtifactArchiver>
+	</publishers> -->
+	<publishers />
+	<buildWrappers />
+</project>
